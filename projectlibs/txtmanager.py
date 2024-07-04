@@ -18,7 +18,7 @@ class TextManager(FileManager):
             pass #sadece boş dosya yaratır
             
     def read_entire_file(self, file_path: str) -> str:
-        with open(file_path) as file:
+        with open(file_path, encoding="utf-8") as file:
             return file.read()
         
     def read_line_from_file(self, file_path: str) -> str:
@@ -71,4 +71,11 @@ class TextManager(FileManager):
         return change_count
     
 if __name__=="__main__":
-    print("Direk bu dosyayı çalıştırmak sana yakışıyor mu?")
+    path = "ortayakarisik.txt"
+   # print("Direk bu dosyayı çalıştırmak sana yakışıyor mu?")
+   
+    txtmanager = TextManager()
+   
+#    txtmanager.create_file("ortayakarisik.txt")
+    icerik = txtmanager.read_entire_file(path)
+    print(icerik)

@@ -104,10 +104,24 @@ class FileManager():
             datetime: Dosyanın oluşturulduğu tarih ve saati döner.
         """
         return dt.datetime.fromtimestamp(os.path.getctime(file_path))
-
-            
     
+    
+    
+    
+    
+    def get_modification_time(self, file_path:str)->dt:
+        """Dosyanın değiştirme zamanını dönderir
+
+        Args:
+            file_path (str): Dosyanın yolu
+
+        Returns:
+            dt: dosyanın değiştirme tarih ve saatini verir
+        """
         
-        
-        
-        
+        return dt.datetime.fromtimestamp(os.path.getmtime(file_path))
+
+if __name__ == "__main__":
+    print("Bu dosya direk olarak çalıştırmak için yaratılmadı. Gir bir yerden import et!")
+    
+    
